@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>pozdravliator.Hosts.Api</name>
+    </assembly>
+    <members>
+        <member name="T:pozdravliator.Hosts.Api.Controllers.PersonController">
+            <summary>
+            Контроллер для работы с персоной
+            </summary>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PersonController.#ctor(pozdravliator.Application.AppServices.Contexts.Services.IPersonService)">
+            <summary>
+            Инициализация экземпляра <see cref="T:pozdravliator.Hosts.Api.Controllers.PersonController"/>
+            </summary>
+            <param name="personService">Сервис работы с персонами</param>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PersonController.CreatePersonAsync(pozdravliator.Contracts.Person.CreatePersonDto,System.Threading.CancellationToken)">
+            <summary>
+            Создание персоны
+            </summary>
+            <param name="person">Модель для создания персоны</param>
+            <param name="cancellationToken">Отмена операции</param>
+            <returns>Идентификатор созданной сущности/></returns>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PersonController.GetPersonsAsync(System.Threading.CancellationToken,System.Int32,System.Int32)">
+            <summary>
+            Получение персон постранично
+            </summary>
+            <param name="cancellationToken">Отмена операции</param>
+            <param name="pageSize">Размер страницы</param>
+            <param name="pageIndex">Номер страницы</param>
+            <returns>Коллекция персон <see cref="T:pozdravliator.Contracts.Person.PersonDto"/></returns>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PersonController.GetNearestBirthdaysAsync(System.Threading.CancellationToken,System.Int32)">
+            <summary>
+            Получение сегодняшних и ближайших др
+            </summary>
+            <param name="cancellationToken">Отмена операции</param>
+            <param name="count">Количество</param>
+            <returns>Коллекция персон <see cref="T:pozdravliator.Contracts.Person.PersonDto"/></returns>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PersonController.GetPersonAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Получение персоны по идентификатору
+            </summary>
+            <param name="id">Идентификатор персоны</param>
+            <param name="cancellationToken">Отмена операции</param>
+            <returns>Модель персоны <see cref="T:pozdravliator.Contracts.Person.PersonDto"/></returns>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PersonController.EditPersonAsync(System.Guid,pozdravliator.Contracts.Person.EditPersonDto,System.Threading.CancellationToken)">
+            <summary>
+            Редактирование персоны
+            </summary>
+            <param name="id"></param>
+            <param name="person">Модель для редактирования персоны</param>
+            <param name="cancellationToken">Отмена операции</param>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PersonController.DeletePersonAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Удаление персоны по идентификатору
+            </summary>
+            <param name="id">Идентификатор персоны</param>
+            <param name="cancellationToken">Отмена операции</param>
+        </member>
+        <member name="T:pozdravliator.Hosts.Api.Controllers.PhotoController">
+            <summary>
+            Контроллер для работы с фото
+            </summary>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PhotoController.#ctor(pozdravliator.Application.AppServices.Contexts.Services.IPhotoService)">
+            <summary>
+            Инициализация экземпляра <see cref="T:pozdravliator.Hosts.Api.Controllers.PhotoController"/>
+            </summary>
+            <param name="photoService">Сервис работы с фото</param>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PhotoController.Upload(Microsoft.AspNetCore.Http.IFormFile,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Загрузка файла в систему
+            </summary>
+            <param name="photo">Файл</param>
+            <param name="personId">Идентификатор персоны</param>
+            <param name="cancellationToken">Токен отмены</param>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PhotoController.Download(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Скачивание файла
+            </summary>
+            <param name="id">Ижентификатор файла</param>
+            <param name="cancellationToken">Токен отмены</param>
+        </member>
+        <member name="M:pozdravliator.Hosts.Api.Controllers.PhotoController.DeletePhotoAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Удаление файла
+            </summary>
+            <param name="id">Идентификатор файла</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
